@@ -24,13 +24,19 @@ body {
 .left {
     width: 50%;
     height: 100%;
-    background-image: url('imagen-ilustrativa.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: #f57d00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    max-width: 80%; 
+    height: auto;
 }
 
 .right {
-    width: 50%;
+    width: 50%; 
     padding: 20px;
     box-sizing: border-box;
 }
@@ -63,7 +69,7 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-    background-color: #ffac30;
+    background-color: #f57d00;
     color: #fff;
     cursor: pointer;
 }
