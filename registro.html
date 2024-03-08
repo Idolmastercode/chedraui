@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Registro</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 <body>
     <div class="container">
@@ -29,14 +30,35 @@
                     <br>
                     <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
                 </div>
+
+                <div class="container-2">
+                    <header>Captcha Generator</header>
+                    <div class="input_field captch_box">
+                      <input type="text" value="" disabled />
+                      <button class="refresh_button">
+                        <i class="fa-solid fa-rotate-right"></i>
+                      </button>
+                    </div>
+                    <div class="input_field captch_input">
+                      <input type="text" placeholder="Enter captcha" />
+                    </div>
+                    <div class="message">Entered captcha is correct</div>
+                    <div class="input_field button ">
+                      <button id="submitButtonCaptcha" type="button" >Submit Captcha</button>
+                    </div>
+                  </div>
+                  
+
                 <div class="form-group">
-                    <input type="submit" value="Registrar">
+                    <input id="submitButton" type="submit" value="Registrar" disabled>
                 </div>
+
             </form>
             <div class="login-link">
                 <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
             </div>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
