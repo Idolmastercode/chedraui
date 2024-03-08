@@ -1,4 +1,4 @@
-// Selecting necessary DOM elements
+// Seleccionando los elementos necesarios
 const captchaTextBox = document.querySelector(".captch_box input");
 const refreshButton = document.querySelector(".refresh_button");
 const captchaInputBox = document.querySelector(".captch_input input");
@@ -6,10 +6,10 @@ const message = document.querySelector(".message");
 const submitButtonCaptcha = document.querySelector("#submitButtonCaptcha");
 const submitButton = document.querySelector("#submitButton");
 
-// Variable to store generated captcha
+// Variable para guardar el captcha generado
 let captchaText = null;
 
-// Function to generate captcha
+// Function para generar el captcha
 const generateCaptcha = () => {
   const randomString = Math.random().toString(36).substring(2, 7);
   const randomStringArray = randomString.split("");
@@ -27,27 +27,27 @@ const refreshBtnClick = (event) => {
 };
 
 const captchaKeyUpValidate = () => {
-  //Toggle submit button disable class based on captcha input field.
+  //Cambiar el valor del del botón del captcha dependiendo de la información respuesta
   submitButtonCaptcha.classList.toggle("disabled", !captchaInputBox.value);
 
   if (!captchaInputBox.value) message.classList.remove("active");
 };
 
-// Function to validate the entered captcha
+// Función para validar el captcha 
 const submitBtnClick = () => {
   captchaText = captchaText
     .split("")
     .filter((char) => char !== " ")
     .join("");
   message.classList.add("active");
-  // Check if the entered captcha text is correct or not
+  // Revisar si el captcha es correcto o no
   if (captchaInputBox.value === captchaText) {
-    message.innerText = "Entered captcha is correct";
-    message.style.color = "#826afb";
+    message.innerText = "El captcha es correcto";
+    message.style.color = "#0b6623";
     submitButton.removeAttribute("disabled");
   } else {
-    message.innerText = "Entered captcha is not correct";
-    message.style.color = "#FF2525";
+    message.innerText = "El captcha es incorrecto";
+    message.style.color = "#d30000";
     submitButton.setAttribute("disabled", true);
   }
 };
@@ -57,5 +57,5 @@ refreshButton.addEventListener("click", refreshBtnClick);
 captchaInputBox.addEventListener("keyup", captchaKeyUpValidate);
 submitButtonCaptcha.addEventListener("click", submitBtnClick);
 
-// Generate a captcha when the page loads
+// Generar un captcha cuando la página carga
 generateCaptcha();
